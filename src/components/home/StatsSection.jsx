@@ -1,4 +1,3 @@
-// components/StatsSectionB.jsx
 import React from "react";
 
 function StatsSectionB() {
@@ -10,7 +9,7 @@ function StatsSectionB() {
   ];
 
   return (
-    <section className="bg-white text-black py-16">
+    <section className="bg-white text-black py-16 mt-20">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-center max-w-4xl">
         {stats.map((stat, index) => (
           <div key={index} className="p-4 border border-[#1F3F00] rounded-xl">
