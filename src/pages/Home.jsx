@@ -8,10 +8,12 @@ import OfferSection from "../components/home/OfferSection";
 import WhyChooseUs from "../components/home/WhyChooseUs";
 import TestimonialsSection from "../components/home/TestimonialsSection";
 import NewsletterSection from "../components/home/NewsletterSection";
+import Header from "../components/shared/Header";
 
 function Home() {
   return (
     <>
+      <Header />
       <HeroSection />
       <HomeCarousel />
       <StatsSectionA />

@@ -12,7 +12,7 @@ const properties = [
   { title: "Hilltop Residences", desc: "Quis nostrud exercitation ullamco." },
 ];
 
-function HomeCarouselMulti() {
+function HomeCarousel() {
   const [itemsPerSlide, setItemsPerSlide] = useState(3);
 
   useEffect(() => {
@@ -36,6 +36,10 @@ function HomeCarouselMulti() {
     chunkedProperties.push(properties.slice(i, i + itemsPerSlide));
   }
 
+  const handleLearnMore = (property) => {
+    alert(`More info about ${property.title} coming soon!`);
+  };
+
   return (
     <div style={{ paddingBottom: "80px", width: "90%", margin: "50px auto" }}>
       <h2 className="text-center mb-4" style={{ color: "#1F3F00" }}>
@@ -50,7 +54,7 @@ function HomeCarouselMulti() {
                 gap: itemsPerSlide === 1 ? "10px" : "20px",
                 justifyContent: "center",
                 flexWrap: "nowrap",
-                padding: itemsPerSlide === 1 ? "0 15px" : "0", // Add space around single card on mobile
+                padding: itemsPerSlide === 1 ? "0 15px" : "0",
               }}
             >
               {group.map((property, i) => (
@@ -63,7 +67,17 @@ function HomeCarouselMulti() {
                     boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
                     overflow: "hidden",
                     minWidth: itemsPerSlide === 1 ? "90%" : "auto",
-                    transition: "transform 0.3s ease",
+                    transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "scale(1.03)";
+                    e.currentTarget.style.boxShadow =
+                      "0 8px 20px rgba(0,0,0,0.15)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "scale(1)";
+                    e.currentTarget.style.boxShadow =
+                      "0 4px 12px rgba(0,0,0,0.1)";
                   }}
                 >
                   <img
@@ -79,6 +93,7 @@ function HomeCarouselMulti() {
                     <h4 style={{ color: "#1F3F00" }}>{property.title}</h4>
                     <p style={{ color: "#555" }}>{property.desc}</p>
                     <button
+                      onClick={() => handleLearnMore(property)}
                       style={{
                         backgroundColor: "#698300",
                         color: "#fff",
@@ -87,6 +102,20 @@ function HomeCarouselMulti() {
                         borderRadius: "5px",
                         marginTop: "10px",
                         cursor: "pointer",
+                        transition:
+                          "background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease",
+                        boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.target.style.backgroundColor = "#566a00";
+                        e.target.style.transform =
+                          "translateY(-3px) scale(1.05)";
+                        e.target.style.boxShadow = "0 6px 14px rgba(0,0,0,0.2)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.backgroundColor = "#698300";
+                        e.target.style.transform = "translateY(0) scale(1)";
+                        e.target.style.boxShadow = "0 4px 8px rgba(0,0,0,0.1)";
                       }}
                     >
                       Learn More
@@ -102,4 +131,4 @@ function HomeCarouselMulti() {
   );
 }
 
-export default HomeCarouselMulti;
+export default HomeCarousel;
