@@ -1,4 +1,6 @@
-import React from "react";
+// src/components/home/HomeCarouselMulti.jsx
+
+import React, { useState, useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import land1 from "/src/assets/land1.jpg";
 
@@ -11,9 +13,27 @@ const properties = [
 ];
 
 function HomeCarouselMulti() {
+  const [itemsPerSlide, setItemsPerSlide] = useState(3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setItemsPerSlide(1); // Mobile
+      } else if (window.innerWidth < 992) {
+        setItemsPerSlide(2); // Tablet
+      } else {
+        setItemsPerSlide(3); // Desktop
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const chunkedProperties = [];
-  for (let i = 0; i < properties.length; i += 3) {
-    chunkedProperties.push(properties.slice(i, i + 3));
+  for (let i = 0; i < properties.length; i += itemsPerSlide) {
+    chunkedProperties.push(properties.slice(i, i + itemsPerSlide));
   }
 
   return (
@@ -27,8 +47,10 @@ function HomeCarouselMulti() {
             <div
               style={{
                 display: "flex",
-                gap: "20px",
+                gap: itemsPerSlide === 1 ? "10px" : "20px",
                 justifyContent: "center",
+                flexWrap: "nowrap",
+                padding: itemsPerSlide === 1 ? "0 15px" : "0", // Add space around single card on mobile
               }}
             >
               {group.map((property, i) => (
@@ -40,6 +62,8 @@ function HomeCarouselMulti() {
                     borderRadius: "10px",
                     boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
                     overflow: "hidden",
+                    minWidth: itemsPerSlide === 1 ? "90%" : "auto",
+                    transition: "transform 0.3s ease",
                   }}
                 >
                   <img
@@ -47,7 +71,7 @@ function HomeCarouselMulti() {
                     alt={property.title}
                     style={{
                       width: "100%",
-                      height: "500px",
+                      height: "400px",
                       objectFit: "cover",
                     }}
                   />
