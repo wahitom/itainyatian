@@ -2,29 +2,38 @@
 
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import { LinkContainer } from "react-router-bootstrap"; // smooth integration with React Router
-import logo from "/src/assets/logo.png"; // replace with your logo path
+import { LinkContainer } from "react-router-bootstrap";
+import logo from "/src/assets/logo.png";
+import "../styles/Header.css"; // 👈 we'll add small responsive tweaks here
 
 function Header() {
   return (
     <Navbar
       expand="lg"
-      style={{ backgroundColor: "#fff" }}
-      className="shadow-sm py-3"
+      style={{
+        backgroundColor: "#fff",
+        height: "80px",
+        overflow: "visible",
+      }}
+      className="shadow-sm py-3 custom-navbar"
     >
       <Container>
         {/* Logo */}
-        <Navbar.Brand href="/">
-          <img
-            src={logo}
-            alt="Company Logo"
-            height="50"
-            style={{ marginRight: "10px" }}
-          />
+        <Navbar.Brand
+          href="/"
+          className="d-flex align-items-center brand-logo-container"
+        >
+          <img src={logo} alt="Company Logo" className="brand-logo" />
           <span
-            style={{ color: "#1F3F00", fontWeight: "700", fontSize: "1.5rem" }}
+            className="brand-name"
+            style={{
+              color: "#1F3F00",
+              fontWeight: "700",
+              fontSize: "1.5rem",
+              whiteSpace: "nowrap",
+            }}
           >
-            Itainyatian
+            Itai Nyatian
           </span>
         </Navbar.Brand>
 
@@ -43,17 +52,17 @@ function Header() {
                 Properties
               </Nav.Link>
             </LinkContainer>
-            <LinkContainer to="/about-us">
+            <LinkContainer to="/aboutus">
               <Nav.Link className="mx-2 text-dark" style={{ fontWeight: 500 }}>
                 About Us
               </Nav.Link>
             </LinkContainer>
-            <LinkContainer to="/team">
+            {/* <LinkContainer to="/team">
               <Nav.Link className="mx-2 text-dark" style={{ fontWeight: 500 }}>
                 Team
               </Nav.Link>
-            </LinkContainer>
-            <LinkContainer to="/contact-us">
+            </LinkContainer> */}
+            <LinkContainer to="/contactus">
               <Nav.Link className="mx-2 text-dark" style={{ fontWeight: 500 }}>
                 Contact Us
               </Nav.Link>

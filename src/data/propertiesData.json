@@ -1,0 +1,76 @@
+{
+  "properties": [
+    {
+      "id": 1,
+      "title": "3-Bedroom Family Home",
+      "location": "Kitengela, Kajiado",
+      "price": "KES 12,000,000",
+      "description": "Spacious family home in a gated community with modern finishes.",
+      "image": "/src/assets/land2.jpg",
+      "category": "Houses"
+    },
+    {
+      "id": 2,
+      "title": "Modern Townhouse",
+      "location": "Thindigua, Kiambu",
+      "price": "KES 15,500,000",
+      "description": "Elegant townhouse with backyard garden and rooftop terrace.",
+      "image": "/src/assets/land2.jpg",
+      "category": "Houses"
+    },
+    {
+      "id": 3,
+      "title": "Luxury Apartment",
+      "location": "Westlands, Nairobi",
+      "price": "KES 18,000,000",
+      "description": "Modern 3-bedroom apartment with pool, gym, and ample parking.",
+      "image": "/src/assets/land2.jpg",
+      "category": "Apartments"
+    },
+    {
+      "id": 4,
+      "title": "Studio Apartment",
+      "location": "Kileleshwa, Nairobi",
+      "price": "KES 7,500,000",
+      "description": "Compact and stylish studio apartment ideal for young professionals.",
+      "image": "/src/assets/land2.jpg",
+      "category": "Apartments"
+    },
+    {
+      "id": 5,
+      "title": "2-Acre Land in Karen",
+      "location": "Karen, Nairobi",
+      "price": "KES 25,000,000",
+      "description": "Prime land located in Karen with road access and ready title deed.",
+      "image": "/src/assets/land2.jpg",
+      "category": "Land & Plots"
+    },
+    {
+      "id": 6,
+      "title": "Quarter-Acre Plot",
+      "location": "Rongai, Kajiado",
+      "price": "KES 3,800,000",
+      "description": "Serviced plot with perimeter wall and water connection.",
+      "image": "/src/assets/land2.jpg",
+      "category": "Land & Plots"
+    },
+    {
+      "id": 7,
+      "title": "Commercial Plot",
+      "location": "Ruiru, Kiambu",
+      "price": "KES 8,500,000",
+      "description": "Ideal for mixed-use development with water and power connection.",
+      "image": "/src/assets/land2.jpg",
+      "category": "Commercial Spaces"
+    },
+    {
+      "id": 8,
+      "title": "Office Complex Space",
+      "location": "Upper Hill, Nairobi",
+      "price": "KES 30,000,000",
+      "description": "Fully serviced office complex with parking and 24/7 security.",
+      "image": "/src/assets/land2.jpg",
+      "category": "Commercial Spaces"
+    }
+  ]
+}

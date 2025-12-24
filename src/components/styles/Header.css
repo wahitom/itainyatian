@@ -1,0 +1,44 @@
+/* src/components/Header.css */
+
+.custom-navbar {
+  transition: all 0.3s ease;
+  overflow: visible !important; /* Ensure dropdown is visible */
+  position: relative;
+  z-index: 1000; /* Keep navbar above hero section */
+}
+
+.brand-logo {
+  height: 70px;
+  object-fit: contain;
+}
+
+/* Mobile view */
+@media (max-width: 991px) {
+  .custom-navbar {
+    min-height: 100px; /* gives logo breathing room */
+    align-items: center;
+  }
+
+  .brand-logo {
+    height: 70px !important;
+  }
+
+  /* Ensure dropdown menu shows properly below header */
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+    z-index: 9999;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Tidy spacing for menu links */
+  .navbar-collapse .nav-link {
+    padding: 10px 20px;
+    text-align: center;
+  }
+}
