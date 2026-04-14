@@ -30,7 +30,7 @@ function WhyChooseUs() {
   ];
 
   return (
-    <section className="py-5 bg-light">
+    <section className="py-5 bg-light" aria-labelledby="why-choose-heading">
       <Container fluid className="px-4 px-md-5">
         <Row className="align-items-stretch">
           {/* Left Side - Text */}
@@ -40,7 +40,7 @@ function WhyChooseUs() {
             className="d-flex flex-column justify-content-center px-4 px-md-5 py-5"
             style={{ backgroundColor: "#e3e6e2ff" }}
           >
-            <h2 className="fw-bold mb-4 text-dark">Why Choose Us</h2>
+            <h2 id="why-choose-heading" className="fw-bold mb-4 text-dark">Why Choose Itaai Nyatian for Real Estate in Kenya</h2>
             <h3 className="fw-semibold mb-4" style={{ color: "#698300" }}>
               Let us guide you Home.
             </h3>
@@ -81,7 +81,7 @@ function WhyChooseUs() {
                   borderRadius: "30px",
                   padding: "10px 24px",
                 }}
-                href="/about" // Update this path later if needed
+                href="/aboutus"
               >
                 Learn More
               </Button>
@@ -93,6 +93,8 @@ function WhyChooseUs() {
             xs={12}
             lg={6}
             className="p-0"
+            role="img"
+            aria-label="Prime land and property in Kenya"
             style={{
               backgroundImage: `url(${land1})`,
               backgroundSize: "cover",

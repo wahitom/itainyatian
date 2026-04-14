@@ -18,9 +18,9 @@ function PropertyList() {
   ];
 
   return (
-    <section className="py-5 container">
-      <h2 className="text-center mb-4" style={{ color: "#1F3F00" }}>
-        Available Properties
+    <section className="py-5 container" aria-labelledby="properties-list-heading">
+      <h2 id="properties-list-heading" className="text-center mb-4" style={{ color: "#1F3F00" }}>
+        Available Properties for Sale in Kenya
       </h2>
 
       {categories.map((category) => {
@@ -51,9 +51,9 @@ function PropertyList() {
                     <div className="card shadow-sm border-0 h-100">
                       <img
                         src={property.image}
-                        alt={property.title}
+                        alt={`${property.title} – ${property.location} | Itaai Nyatian Kenya`}
                         className="card-img-top"
-                        style={{ height: "250px", objectFit: "cover" }}
+                        style={{ height: "250px", objectFit: "cover" }} loading="lazy" width="400" height="250"
                       />
                       <div className="card-body">
                         <h5 className="card-title">{property.title}</h5>

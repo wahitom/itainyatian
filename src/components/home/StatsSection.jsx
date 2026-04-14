@@ -32,7 +32,7 @@ function StatsSection() {
   }, []);
 
   return (
-    <section className="bg-[#f8faf7] text-black py-20">
+    <section className="bg-[#f8faf7] text-black py-20" aria-label="Itaai Nyatian company statistics">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-center max-w-4xl">
         {stats.map((stat, i) => (
           <motion.div

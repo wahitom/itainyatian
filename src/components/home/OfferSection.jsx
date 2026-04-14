@@ -5,18 +5,18 @@ import { Card, Button, Row, Col } from "react-bootstrap";
 import land1 from "/src/assets/land1.jpg";
 
 const offers = [
-  { title: "Houses", category: "REAL ESTATE", image: land1 },
-  { title: "Buildings", category: "REAL ESTATE", image: land1 },
-  { title: "Plots of Land", category: "REAL ESTATE", image: land1 },
-  { title: "Drilling Boreholes", category: "REAL ESTATE", image: land1 },
+  { title: "Houses", category: "REAL ESTATE", image: land1, alt: "Residential houses for sale in Nairobi Kenya – Itaai Nyatian" },
+  { title: "Buildings", category: "REAL ESTATE", image: land1, alt: "Commercial buildings and real estate in Kenya – Itaai Nyatian" },
+  { title: "Plots of Land", category: "REAL ESTATE", image: land1, alt: "Plots and land for sale in Kenya – Itaai Nyatian Real Estate" },
+  { title: "Drilling Boreholes", category: "SERVICES", image: land1, alt: "Professional borehole drilling services in Kenya – Itaai Nyatian" },
 ];
 
 function OfferSection() {
   return (
-    <div className="py-5 px-4 bg-light" style={{ marginTop: "80px" }}>
+    <section className="py-5 px-4 bg-light" style={{ marginTop: "80px" }} aria-label="Our property and service offerings">
       <div className="text-center mb-5">
         <h2 className="fw-bold text-uppercase" style={{ color: "#698300" }}>
-          What We Offer
+          Properties &amp; Services We Offer in Kenya
         </h2>
       </div>
 
@@ -38,7 +38,7 @@ function OfferSection() {
             >
               <Card.Img
                 src={offer.image}
-                alt={offer.title}
+                alt={offer.alt}
                 style={{ height: "450px", objectFit: "cover" }}
               />
 
@@ -72,7 +72,7 @@ function OfferSection() {
           </Col>
         ))}
       </Row>
-    </div>
+    </section>
   );
 }
 

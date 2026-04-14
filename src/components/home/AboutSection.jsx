@@ -5,6 +5,7 @@ function AboutSection() {
   return (
     <section
       className="bg-white text-black py-20"
+      aria-labelledby="about-home-heading"
       style={{ paddingTop: "100px" }}
     >
       <div className="container mx-auto flex flex-col md:flex-row items-center gap-10 px-6 max-w-6xl">
@@ -12,7 +13,7 @@ function AboutSection() {
         <div className="md:w-1/2">
           <img
             src={land1}
-            alt="Real estate and property management"
+            alt="Itaai Nyatian team handling real estate and property management in Nairobi Kenya"
             className="rounded-xl shadow-lg w-full object-cover"
             style={{ maxHeight: "400px" }}
           />

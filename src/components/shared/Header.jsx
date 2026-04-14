@@ -8,7 +8,32 @@ import "../styles/Header.css"; // 👈 we'll add small responsive tweaks here
 
 function Header() {
   return (
-    <Navbar
+    <>
+      {/* Skip to main content - accessibility + SEO */}
+      <a
+        href="#main-content"
+        style={{
+          position: "absolute", left: "-9999px", top: "auto",
+          width: "1px", height: "1px", overflow: "hidden",
+          zIndex: 9999,
+        }}
+        onFocus={e => {
+          e.currentTarget.style.left = "16px";
+          e.currentTarget.style.top = "16px";
+          e.currentTarget.style.width = "auto";
+          e.currentTarget.style.height = "auto";
+          e.currentTarget.style.padding = "8px 16px";
+          e.currentTarget.style.background = "#1F3F00";
+          e.currentTarget.style.color = "#fff";
+          e.currentTarget.style.borderRadius = "4px";
+        }}
+        onBlur={e => {
+          e.currentTarget.style.left = "-9999px";
+        }}
+      >
+        Skip to main content
+      </a>
+      <Navbar
       expand="lg"
       style={{
         backgroundColor: "#fff",
@@ -21,9 +46,10 @@ function Header() {
         {/* Logo */}
         <Navbar.Brand
           href="/"
+          aria-label="Itaai Nyatian home"
           className="d-flex align-items-center brand-logo-container"
         >
-          <img src={logo} alt="Company Logo" className="brand-logo" />
+          <img src={logo} alt="Itaai Nyatian – Real Estate Kenya" className="brand-logo" width="48" height="48" />
           <span
             className="brand-name"
             style={{
@@ -33,7 +59,7 @@ function Header() {
               whiteSpace: "nowrap",
             }}
           >
-            Itai Nyatian
+            Itaai Nyatian
           </span>
         </Navbar.Brand>
 
@@ -41,7 +67,7 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
+          <Nav className="ms-auto" as="ul" aria-label="Main navigation">
             <LinkContainer to="/home">
               <Nav.Link className="mx-2 text-dark" style={{ fontWeight: 500 }}>
                 Home
@@ -71,6 +97,7 @@ function Header() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    </>
   );
 }
 

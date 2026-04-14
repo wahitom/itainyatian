@@ -1,29 +1,34 @@
-// src/components/properties/PropertiesHero.jsx
 import React from "react";
-import heroImage from "/src/assets/land2.jpg"; // replace with your own
+import heroImage from "/src/assets/land2.jpg";
 
 function PropertiesHero() {
   return (
     <section
-      className="text-center text-white d-flex align-items-center justify-content-center"
+      aria-label="Properties page header"
       style={{
         backgroundImage: `url(${heroImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         height: "60vh",
         position: "relative",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        textAlign: "center",
+        color: "#fff",
       }}
     >
-      <div
-        style={{
-          backgroundColor: "rgba(0, 0, 0, 0.4)",
-          padding: "40px",
-          borderRadius: "12px",
-        }}
-      >
-        <h1 className="fw-bold mb-3">Explore Our Properties</h1>
-        <p className="fs-5">
-          Find your perfect plot, home, or investment opportunity today.
+      {/* Accessible overlay */}
+      <div aria-hidden="true" style={{
+        position: "absolute", inset: 0,
+        backgroundColor: "rgba(0,0,0,0.45)"
+      }} />
+      <div style={{ position: "relative", zIndex: 1, padding: "40px 20px", maxWidth: "640px" }}>
+        <h1 className="fw-bold mb-3" style={{ fontSize: "clamp(1.8rem, 4vw, 2.8rem)" }}>
+          Explore Our Properties in Kenya
+        </h1>
+        <p className="fs-5" style={{ color: "rgba(255,255,255,0.9)" }}>
+          Find your perfect plot, home, or investment opportunity in Nairobi and across Kenya today.
         </p>
       </div>
     </section>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://itaainyatian.vercel.app/sitemap.xml

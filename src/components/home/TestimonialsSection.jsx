@@ -9,35 +9,35 @@ const testimonials = [
     name: "James Kariuki",
     subtitle: "Home Buyer",
     text: "Working with this team made buying my first home a smooth and stress-free experience. They guided me through every step with patience and professionalism.",
-    img: "https://cdn-icons-png.flaticon.com/512/149/149071.png",
+    img: "https://cdn-icons-png.flaticon.com/512/149/149071.png", imgAlt: "Client avatar",
   },
   {
     name: "Naomi Wambui",
     subtitle: "Land Investor",
     text: "I purchased several plots through them and was impressed by their honesty and quick communication. Highly recommend their services!",
-    img: "https://cdn-icons-png.flaticon.com/512/149/149071.png",
+    img: "https://cdn-icons-png.flaticon.com/512/149/149071.png", imgAlt: "Client avatar",
   },
   {
     name: "Brian Otieno",
     subtitle: "Construction Client",
     text: "They helped me build and complete my dream home on time. The quality of work was excellent and the team was always transparent.",
-    img: "https://cdn-icons-png.flaticon.com/512/149/149071.png",
+    img: "https://cdn-icons-png.flaticon.com/512/149/149071.png", imgAlt: "Client avatar",
   },
   {
     name: "Lilian Njeri",
     subtitle: "Property Seller",
     text: "I sold my property faster than I expected. Their team handled everything — from listing to finalizing the deal — with exceptional professionalism.",
-    img: "https://cdn-icons-png.flaticon.com/512/149/149071.png",
+    img: "https://cdn-icons-png.flaticon.com/512/149/149071.png", imgAlt: "Client avatar",
   },
 ];
 
 function TestimonialsSectionLightBG() {
   return (
-    <section className="py-5" style={{ backgroundColor: "#f5f5f5" }}>
+    <section className="py-5" style={{ backgroundColor: "#f5f5f5" }} aria-labelledby="testimonials-heading">
       <div className="container text-center text-black px-3">
         {/* Rating */}
         <div className="mb-4">
-          <h2 className="fw-bold mb-2">What Our Clients Say</h2>
+          <h2 id="testimonials-heading" className="fw-bold mb-2">What Our Clients Say About Itaai Nyatian</h2>
           <div className="d-flex justify-content-center align-items-center gap-2">
             <span className="fs-4 fw-semibold">4.8</span>
             <div>

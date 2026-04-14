@@ -10,7 +10,7 @@ function AboutUs() {
           <Col md={6} className="mb-4 mb-md-0">
             <img
               src="/src/assets/land2.jpg"
-              alt="About us"
+              alt="Itaai Nyatian real estate team in Nairobi, Kenya"
               className="img-fluid rounded-4 shadow-sm"
             />
           </Col>
@@ -37,7 +37,7 @@ function AboutUs() {
           <Col md={6} className="mb-4 mb-md-0">
             <img
               src="/src/assets/land2.jpg"
-              alt="Our story"
+              alt="The founding story of Itaai Nyatian real estate company in Kenya"
               className="img-fluid rounded-4 shadow-sm"
             />
           </Col>

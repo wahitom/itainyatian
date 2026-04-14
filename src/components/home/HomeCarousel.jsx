@@ -1,15 +1,36 @@
-// src/components/home/HomeCarouselMulti.jsx
+// src/components/home/HomeCarousel.jsx
 
 import React, { useState, useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
+import { Link } from "react-router-dom";
 import land1 from "/src/assets/land1.jpg";
 
 const properties = [
-  { title: "Green Acres Estate", desc: "Lorem ipsum dolor sit amet." },
-  { title: "Savannah View Plots", desc: "Consectetur adipiscing elit." },
-  { title: "Sunset Gardens", desc: "Sed do eiusmod tempor incididunt." },
-  { title: "Palm Grove", desc: "Ut labore et dolore magna aliqua." },
-  { title: "Hilltop Residences", desc: "Quis nostrud exercitation ullamco." },
+  {
+    title: "Green Acres Estate",
+    desc: "Spacious residential plots in a secure, serene environment — ideal for families building their dream home.",
+    alt: "Green Acres Estate – residential plots for sale in Kenya by Itaai Nyatian",
+  },
+  {
+    title: "Savannah View Plots",
+    desc: "Prime land with breathtaking views, perfect for investment or personal development in Kenya.",
+    alt: "Savannah View Plots – prime land for sale in Kenya by Itaai Nyatian",
+  },
+  {
+    title: "Sunset Gardens",
+    desc: "Affordable plots in a growing neighbourhood with ready infrastructure and easy access roads.",
+    alt: "Sunset Gardens – affordable plots and land in Nairobi Kenya by Itaai Nyatian",
+  },
+  {
+    title: "Palm Grove",
+    desc: "Exclusive gated community plots featuring modern amenities and lush landscaping throughout.",
+    alt: "Palm Grove – exclusive gated community property in Kenya by Itaai Nyatian",
+  },
+  {
+    title: "Hilltop Residences",
+    desc: "Premium hilltop homes and plots offering panoramic views and cool highland climate living.",
+    alt: "Hilltop Residences – premium highland homes and plots in Kenya by Itaai Nyatian",
+  },
 ];
 
 function HomeCarousel() {
@@ -18,14 +39,13 @@ function HomeCarousel() {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
-        setItemsPerSlide(1); // Mobile
+        setItemsPerSlide(1);
       } else if (window.innerWidth < 992) {
-        setItemsPerSlide(2); // Tablet
+        setItemsPerSlide(2);
       } else {
-        setItemsPerSlide(3); // Desktop
+        setItemsPerSlide(3);
       }
     };
-
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -36,16 +56,19 @@ function HomeCarousel() {
     chunkedProperties.push(properties.slice(i, i + itemsPerSlide));
   }
 
-  const handleLearnMore = (property) => {
-    alert(`More info about ${property.title} coming soon!`);
-  };
-
   return (
-    <div style={{ paddingBottom: "80px", width: "90%", margin: "50px auto" }}>
-      <h2 className="text-center mb-4" style={{ color: "#1F3F00" }}>
-        Featured Properties
+    <section
+      aria-labelledby="featured-properties-heading"
+      style={{ paddingBottom: "80px", width: "90%", margin: "50px auto" }}
+    >
+      <h2
+        id="featured-properties-heading"
+        className="text-center mb-4"
+        style={{ color: "#1F3F00" }}
+      >
+        Featured Properties in Kenya
       </h2>
-      <Carousel interval={null}>
+      <Carousel interval={null} aria-label="Featured property listings slideshow">
         {chunkedProperties.map((group, idx) => (
           <Carousel.Item key={idx}>
             <div
@@ -58,7 +81,7 @@ function HomeCarousel() {
               }}
             >
               {group.map((property, i) => (
-                <div
+                <article
                   key={i}
                   style={{
                     flex: "1",
@@ -71,29 +94,24 @@ function HomeCarousel() {
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = "scale(1.03)";
-                    e.currentTarget.style.boxShadow =
-                      "0 8px 20px rgba(0,0,0,0.15)";
+                    e.currentTarget.style.boxShadow = "0 8px 20px rgba(0,0,0,0.15)";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = "scale(1)";
-                    e.currentTarget.style.boxShadow =
-                      "0 4px 12px rgba(0,0,0,0.1)";
+                    e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.1)";
                   }}
                 >
                   <img
                     src={land1}
-                    alt={property.title}
-                    style={{
-                      width: "100%",
-                      height: "400px",
-                      objectFit: "cover",
-                    }}
+                    alt={property.alt}
+                    loading="lazy"
+                    style={{ width: "100%", height: "400px", objectFit: "cover" }}
                   />
                   <div style={{ padding: "15px" }}>
-                    <h4 style={{ color: "#1F3F00" }}>{property.title}</h4>
+                    <h3 style={{ color: "#1F3F00", fontSize: "1.1rem" }}>{property.title}</h3>
                     <p style={{ color: "#555" }}>{property.desc}</p>
-                    <button
-                      onClick={() => handleLearnMore(property)}
+                    <Link
+                      to="/properties"
                       style={{
                         backgroundColor: "#698300",
                         color: "#fff",
@@ -102,32 +120,23 @@ function HomeCarousel() {
                         borderRadius: "5px",
                         marginTop: "10px",
                         cursor: "pointer",
-                        transition:
-                          "background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease",
-                        boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+                        textDecoration: "none",
+                        display: "inline-block",
+                        fontWeight: 600,
+                        transition: "background-color 0.3s ease",
                       }}
-                      onMouseEnter={(e) => {
-                        e.target.style.backgroundColor = "#566a00";
-                        e.target.style.transform =
-                          "translateY(-3px) scale(1.05)";
-                        e.target.style.boxShadow = "0 6px 14px rgba(0,0,0,0.2)";
-                      }}
-                      onMouseLeave={(e) => {
-                        e.target.style.backgroundColor = "#698300";
-                        e.target.style.transform = "translateY(0) scale(1)";
-                        e.target.style.boxShadow = "0 4px 8px rgba(0,0,0,0.1)";
-                      }}
+                      aria-label={`View details for ${property.title}`}
                     >
                       Learn More
-                    </button>
+                    </Link>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           </Carousel.Item>
         ))}
       </Carousel>
-    </div>
+    </section>
   );
 }
 

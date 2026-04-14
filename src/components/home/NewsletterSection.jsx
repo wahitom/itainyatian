@@ -13,10 +13,10 @@ function NewsletterSection() {
   };
 
   return (
-    <section className="py-5" style={{ backgroundColor: "#f5f5f5" }}>
+    <section className="py-5" style={{ backgroundColor: "#f5f5f5" }} aria-labelledby="newsletter-heading">
       <div className="container text-center text-black">
         <FaEnvelope size={40} className="mb-3" style={{ color: "#698300ff" }} />
-        <h2 className="fw-bold mb-2">Stay Updated With the Latest Listings</h2>
+        <h2 id="newsletter-heading" className="fw-bold mb-2">Stay Updated With the Latest Property Listings in Kenya</h2>
         <p className="text-muted mb-4">
           Subscribe to our newsletter and never miss out on great deals or
           property updates.
